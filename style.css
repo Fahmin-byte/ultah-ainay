@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Card utama */
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 35px 30px;
+    text-align: center;
+    max-width: 360px;
+    color: #333;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+    animation: pop 1s ease;
+    z-index: 2;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 22px;
+    color: #ff2e63;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Tombol */
+.btn-group {
+    margin-top: 18px;
+}
+
+button {
+    border: none;
+    padding: 12px 22px;
+    margin: 6px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #ff4d6d, #ff758c);
+    box-shadow: 0 10px 20px rgba(255,77,109,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(255,77,109,0.5);
+}
+
+#surpriseText {
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Balon */
+.balloons span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 36px;
+    animation: float 8s infinite ease-in;
+}
+
+.balloons span:nth-child(1) { left: 10%; }
+.balloons span:nth-child(2) { left: 30%; animation-delay: 2s; }
+.balloons span:nth-child(3) { left: 50%; animation-delay: 4s; }
+.balloons span:nth-child(4) { left: 70%; animation-delay: 1s; }
+.balloons span:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
